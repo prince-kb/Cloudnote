@@ -38,7 +38,6 @@ router.post(
       notes,
       tag,
     });
-    console.log("Note added");
     res.send(note);
   }
 );
