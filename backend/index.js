@@ -7,7 +7,13 @@ const port = 5000
  
 app.use(express.json())
 //Using cors will enable connection to backend using javascript and without actually using an anchor or href or link.
-app.use(cors())
+app.use(cors(
+  {
+      origin: ["https://cloudnote-app.vercel.app"],
+      methods: ["POST", "GET","PUT","DELETE"],
+      credentials: true
+  }
+));
 
 //res means response, req eans request
 
@@ -22,4 +28,4 @@ app.use('/auth',require('./routes/auth'));
 app.use('/notes',require('./routes/notes'));
 app.listen(port, () => {
   console.log(`Cloud NoteBook App listening on the port `)
-})
+})  
