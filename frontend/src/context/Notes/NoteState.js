@@ -81,7 +81,7 @@ const NoteState = (props)=>{
           }
         });
         const res = await response.json();
-        console.log("Note deleted",res)
+        console.log(res)
         setNotes(notee.filter((allNotes)=>{return allNotes._id!==id}))
       }
       catch(err){

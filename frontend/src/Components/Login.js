@@ -6,7 +6,7 @@ import NoteContext from '../context/Notes/NoteContext';
 const Login = () => {
   const host = "http://localhost:5000"
   const navigate=useNavigate();
-    const [ credentials,setCredentials]=useState({email : "name@gmail.com", password : "name"})
+    const [ credentials,setCredentials]=useState({email : "name1@gmail.com", password : "name1"})
     const onChange=(e)=>{
       setCredentials({...credentials,[e.target.name] : [e.target.value]})
     }
