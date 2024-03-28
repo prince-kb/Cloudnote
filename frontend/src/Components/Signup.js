@@ -21,7 +21,7 @@ const Signup = (props) => {
       const mail = email.toString();
       const passw=pass.toString();
       try{
-        const response = await fetch(`${host}/auth/signup/`, {
+        const response = await fetch(`${host}/auth/signup`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
