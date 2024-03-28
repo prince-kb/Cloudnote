@@ -16,7 +16,7 @@ const Login = () => {
     const onSubmit=async(e)=>{
         e.preventDefault()
         try{
-            const response = await fetch(`${host}/auth/login`, {
+            const response = await fetch(`${host}/auth/login/`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
