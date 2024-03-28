@@ -5,9 +5,16 @@ connectToMongo();
 const app = express()
 const port = 5000
  
+const corsConfig = {
+  origin: [ "https://cloudnote-bd.vercel.app/", "http://localhost:5000"],
+  credentials: true,
+  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ['Content-Type']
+};
+
 app.use(express.json())
 //Using cors will enable connection to backend using javascript and without actually using an anchor or href or link.
-app.use(cors());
+app.use(cors(corsConfig));
 
 //res means response, req eans request
 
