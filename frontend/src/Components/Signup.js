@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import NoteContext from '../context/Notes/NoteContext';
 
 const Signup = (props) => {
-  
+
   const host = process.env.REACT_APP_SERVERID
   const navigate = useNavigate();
   const [credentials,setCredentials]=useState({name : "",email : "",pass : ""})
@@ -24,7 +24,8 @@ const Signup = (props) => {
         const response = await fetch(`${host}/auth/signup`, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin" : "*"
               },
           body: JSON.stringify({name : nam,email : mail,password : passw,description : "none"}),
         });
