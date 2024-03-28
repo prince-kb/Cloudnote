@@ -11,15 +11,18 @@ app.use(cors());
 
 //res means response, req eans request
 
-/* app.get('/', (req, res) => {
-  res.send('Hello World1!')
-}) */
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 //This line helps the app to not full depened on the current file and use another file to simplify
 //So instead of get request , we areu= using use request
 // app.use('/auth',require('./routes/auth'));
 app.use('/auth',require('./routes/auth'));
 app.use('/notes',require('./routes/notes'));
+app.get('/none',(req,res)=>{
+  res.send("RUNNING");
+});
 app.listen(port, () => {
   console.log(`Cloud NoteBook App listening on the port `)
 })  
