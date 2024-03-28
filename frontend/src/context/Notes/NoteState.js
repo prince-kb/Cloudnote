@@ -39,7 +39,8 @@ const NoteState = (props)=>{
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "auth-token" : localStorage.getItem('token')
+              "auth-token" : localStorage.getItem('token'),
+              "Access-Control-Allow-Origin" : "*"
             }
           });
           if(response){
@@ -59,7 +60,8 @@ const NoteState = (props)=>{
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "auth-token" : localStorage.getItem('token')
+              "auth-token" : localStorage.getItem('token'),
+              "Access-Control-Allow-Origin" : "*"
             },
             body: JSON.stringify({title,notes,tag}),
           });
@@ -77,7 +79,8 @@ const NoteState = (props)=>{
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            "auth-token" : localStorage.getItem('token')
+            "auth-token" : localStorage.getItem('token'),
+            "Access-Control-Allow-Origin" : "*"
           }
         });
         setNotes(notee.filter((allNotes)=>{return allNotes._id!==id}))
@@ -107,6 +110,7 @@ const NoteState = (props)=>{
           headers: {
             "Content-Type": "application/json",
             "auth-token" : localStorage.getItem('token'),
+            "Access-Control-Allow-Origin" : "*"
           },
           body : JSON.stringify({title,notes,tag})
         });
