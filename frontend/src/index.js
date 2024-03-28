@@ -9,6 +9,7 @@ import Contact from './Components/Contact';
 import './index.css';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import FakeCall from './Components/FakeCall';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         path : "signup",
         element : <Signup/>
       },
+      {
+        path : ":id",
+        element : <FakeCall/>
+      }
     ]
   }
 ])

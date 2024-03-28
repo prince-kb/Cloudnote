@@ -3,7 +3,7 @@ import NoteContext from "./NoteContext";
 
 const NoteState = (props)=>{
   //Since we are using host:5000 for backend, we will need the same and not host:3000 which is for our frontend
-    const host = "http://localhost:5000"
+    const host = process.env.REACT_APP_SERVERID
     // useEffect(() => {
     //   fetchmyNotes();
     // }, [])
@@ -73,15 +73,13 @@ const NoteState = (props)=>{
 
       const deleteNote=async(id)=>{
         try{
-        const response = await fetch(`${host}/notes/deletenote/${id}`, {
+        await fetch(`${host}/notes/deletenote/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
             "auth-token" : localStorage.getItem('token')
           }
         });
-        const res = await response.json();
-        console.log(res)
         setNotes(notee.filter((allNotes)=>{return allNotes._id!==id}))
       }
       catch(err){
