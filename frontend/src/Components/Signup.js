@@ -4,7 +4,7 @@ import NoteContext from '../context/Notes/NoteContext';
 
 const Signup = (props) => {
   
-  const host = "http://localhost:5000"
+  const host = process.env.REACT_APP_SERVERID
   const navigate = useNavigate();
   const [credentials,setCredentials]=useState({name : "",email : "",pass : ""})
   const Change=(e)=>{

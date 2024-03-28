@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
-//It should b einstalled seperately
+//It should be installed seperately
 const { body, validationResult } = require("express-validator");
 
 //Middleware
