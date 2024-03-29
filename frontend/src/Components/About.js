@@ -11,7 +11,7 @@ function About() {
         <details>
         <summary className='fs-1'>ME  </summary>
         <h3 className="h3">I am currently a 3rd bachelor from NETAJI SUBHASH ENGINEERING COLLEGE ,KOLKATA and department COMPUTER SCIENCE </h3>
-        <h3 className="h3">I belong from Jhajha,Bihar a small town in Bihar Jharkhand Border near Deoghar(BabaDham).</h3>
+        <h3 className="h3">I belong from Jhajha,Bihar a town at the Bihar-Jharkhand border near Deoghar(BabaDham).</h3>
         <h3 className="h3">I followed CBSE curriculum for my studies.</h3>
         <h3 className="h3">I completed my Intermediate schooling from Diksha International School, Bhagalpur and secured 90% marks there.</h3>
         <h3 className="h3">My matriculation was from my Sardonyx School, Jhajha -my hometown and i have chosen Engineering over government jobs.</h3>

@@ -8,6 +8,7 @@ function Notes() {
   
   const ref = useRef(null)
   const refClose = useRef(null)
+  const [btntext,setBtntext]=useState("Show my notes");
   const [n,setN]=useState({title : "" ,notes : "", tag : ""})
   const [nn,setNn]=useState({id : "",etitle : "",enotes : "", etag : ""})
   const note = useContext(NoteContext);
@@ -15,6 +16,19 @@ function Notes() {
 
   const onChange=(e)=>{
     setN({...n,[e.target.name] : e.target.value})
+  }
+
+  const buttontext=()=>{
+    if(btntext === "Show my notes"){
+      setBtntext("Hide")
+    }
+    else { setBtntext('Show my notes')
+    }
+  }
+
+  const bindedfunc = ()=>{
+    fetchmyNotes();
+    buttontext();
   }
 
   const submit=(e)=>{
@@ -125,8 +139,8 @@ function Notes() {
 
                 {/*         Each note from NoteItem*/}        
        { localStorage.getItem('token') ? <div className="d-flex justify-content-center">
-        <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ww" aria-expanded="false" aria-controls="ww" onClick={fetchmyNotes}>
-          Show my notes
+        <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ww" aria-expanded="false" aria-controls="ww" onClick={bindedfunc}>
+          {btntext}
         </button>
         <div style={{minHeight: "120px"}}>
           <div className="collapse collapse-horizontal" id="ww">
