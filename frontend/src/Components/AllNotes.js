@@ -88,7 +88,7 @@ function Notes() {
           </div>
           <div className="form-floating mb-3">
             <input type="text" className="form-control" id="tag" placeholder="Tag" name="tag" value={n.tag} onChange={onChange}/>
-            <label htmlFor="tag">Tag for your note</label>
+            <refCloselabel htmlFor="tag">Tag for your note</refCloselabel>
           </div>
           <button type="submit" disabled={n.title.length<1 || n.notes.length<3} className="btn btn-primary" onClick={submit}>Add Note</button>
         </form>
