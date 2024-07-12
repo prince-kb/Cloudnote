@@ -1,9 +1,13 @@
 const connectToMongo = require('./db')
 var cors = require('cors')
 const express = require('express')
-connectToMongo();
 const app = express()
 const port = 5000
+
+const dotenv = require('dotenv')
+
+dotenv.config();
+connectToMongo();
  
 // const corsConfig = {
 //   origin: [ "https://cloudnote-bd.vercel.app/", "http://localhost:5000"],
