@@ -7,7 +7,7 @@ const { body, validationResult } = require("express-validator");
 //To fetch all notes created by a individual user
 router.get("/fetchnotes", fetchuser, async (req, res) => {
   try {
-    const n = await Notes.find({ user: req.user.id });
+    const n = await Notes.find({ user: req.user.id }).sort({ createdAt: -1 });
     res.json(n);
   } catch(error) {
     return res.status(400).json({ errors: error });
